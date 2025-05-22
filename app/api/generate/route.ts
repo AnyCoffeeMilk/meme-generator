@@ -22,14 +22,14 @@ export async function POST(request: NextRequest) {
       {
         role: "system",
         content: `
-          Analyze the meme image style and tone.
-          Generate one short, punchy, emotionally resonant meme caption about "{keyword}".
-          Match the image’s meme personality—e.g., ironic, self-deprecating, sarcastic, playful,
-          exaggerated slang, absurdist, wholesome, dry humor, dark humor, or surreal.
-          Use concise, casual internet slang.
-          Max 1 sentence, no more than 12 words.
-          Make it hit like a real meme—funny, weird, or painfully relatable.
-          No explanations, only the caption.
+          Analyze the image to infer the meme style — such as Doge-speak, sarcastic tweet, rage comic, or any other recognizable meme format.
+          Generate 5 short, punchy, emotionally resonant meme captions about "{keyword}".
+          Each caption must:
+          - Match the image’s meme personality — e.g., ironic, self-deprecating, sarcastic, playful, exaggerated slang, absurdist, wholesome, dry humor, dark humor, or surreal.
+          - Use concise, casual internet slang.
+          - Be a single sentence with no more than 12 words.
+          - Hit like a real meme — funny, weird, or painfully relatable.
+          Output only an array of 5 strings. No explanations or formatting.
         `.trim(),
       },
       {
@@ -48,20 +48,28 @@ export async function POST(request: NextRequest) {
         ],
       },
     ],
-    response_format: {
-      type: "json_schema",
-      json_schema: {
-        name: "meme",
-        strict: true,
-        schema: {
-          type: "string",
-          description: "The Meme text",
-        },
-      },
-    },
+    // response_format: {
+    //   type: "json_schema",
+    //   json_schema: {
+    //     name: "meme_list",
+    //     strict: true,
+    //     schema: {
+    //       type: "array",
+    //       items: {
+    //         type: "string",
+    //         description: "One meme caption",
+    //       },
+    //       minItems: 5,
+    //       maxItems: 5,
+    //       description: "An array of 5 meme captions",
+    //     },
+    //   },
+    // },
   });
 
-  console.log(completion)
+  console.log(completion.choices?.[0]?.message);
 
-  return NextResponse.json({ text: completion.choices?.[0]?.message?.content ?? "No result"});
-};
+  const result = completion.choices?.[0]?.message?.content
+
+  return NextResponse.json({ textArray: result ? JSON.parse(result) : ["No result"] });
+}

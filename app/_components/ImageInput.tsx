@@ -13,7 +13,7 @@ export default function ImageInput() {
   };
 
   return (
-    <div className="flex-center flex-1 w-full relative">
+    <div className="flex-center min-h-[300px] flex-1 w-full relative">
       <input
         className="h-full flex-1 cursor-pointer z-10 p-4 border-2 border-dashed text-transparent border-bgSecondary hover:border-fgSecondary rounded-md"
         name="img"
