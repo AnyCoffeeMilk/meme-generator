@@ -1,0 +1,31 @@
+{
+  "header": {
+    "title": "MemeGen",
+    "subtitle": "Generate AI-powered meme from any image and keyword in 3 steps."
+  },
+  "buttons": {
+    "next": "Next Step",
+    "back": "Back",
+    "download": "Download Your Meme",
+    "editCaption": "Customize"
+  },
+  "instructions": {
+    "form": "Upload an image and enter keywords to set the meme’s vibe.",
+    "select": "Choose your favorite AI-generated caption.",
+    "edit": "Place your caption, tweak the font, and style your meme."
+  },
+  "placeholder": {
+    "keywords": "Enter some keywords",
+    "caption": "Edit your caption here..."
+  },
+  "labels": {
+    "align": "Align",
+    "font": "Font",
+    "text": "Text"
+  },
+  "align": {
+    "top": "Top",
+    "center": "Center",
+    "bottom": "Bottom"
+  }
+}

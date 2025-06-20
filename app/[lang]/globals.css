@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --theme: #e7644d;
+  --bg-primary: #ededed;
+  --bg-secondary: #6a6a6a;
+  --fg-primary: #0a0a0a;
+  --fg-secondary: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg-theme: #e7644d;
+    --bg-theme: #d05a45;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #333333;
+    --fg-primary: #ededed;
+    --fg-secondary: #6a6a6a;
+  }
+}
+
+@theme inline {
+  --color-fgTheme: var(--fg-theme);
+  --color-bgTheme: var(--bg-theme);
+  --color-bgPrimary: var(--bg-primary);
+  --color-bgSecondary: var(--bg-secondary);
+  --color-fgPrimary: var(--fg-primary);
+  --color-fgSecondary: var(--fg-secondary);
+  --font-noto: 'Noto Sans SC';
+  --font-mono: var(--font-geist-mono);
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility container-md {
+  @apply border border-bgSecondary rounded-md bg-bgPrimary;
+}
+
+@utility clickable {
+  @apply cursor-pointer disabled:cursor-not-allowed
+}
+
+html[lang^="zh"] body {
+  @apply font-noto;
+}
+
+html[lang^="en"] body {
+  @apply font-mono;
+}
+
+body {
+  min-height: 100svh;
+  background: var(--color-bgPrimary);
+  color: var(--color-fgPrimary);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bgSecondary) transparent;
+  @apply flex flex-col items-center p-2 sm:p-0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+button,
+label {
+  user-select: none;
+}
+
+input {
+  user-select: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #23232329;
+}
