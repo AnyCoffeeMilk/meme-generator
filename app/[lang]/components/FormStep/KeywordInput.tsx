@@ -20,7 +20,7 @@ export default function KeywordInput({ keyword, onKeywordChange }: Props) {
       autoComplete="false"
       className="
         w-full container-md
-        p-4  text-fgPrimary text-base sm:text-lg 
+        px-4 py-2 text-fgPrimary text-base 
         autofill:text-fgPrimary 
         hover:border-fgSecondary 
         focus:border-fgSecondary"

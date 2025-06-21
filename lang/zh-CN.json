@@ -11,8 +11,8 @@
   },
   "instructions": {
     "form": "上传一张图片并输入关键词来设置梗图的氛围。",
-    "select": "选择你最喜欢的AI生成的文本。",
-    "edit": "放置你的文本，调整字体，并美化你的梗图。"
+    "select": "选择你最喜欢的AI生成文本。",
+    "edit": "放置文本，调整字体。"
   },
   "placeholder": {
     "keywords": "输入一些关键词",
@@ -21,11 +21,12 @@
   "labels": {
     "align": "对齐",
     "font": "字体",
-    "text": "文本"
+    "color": "颜色",
+    "outline": "描边"
   },
   "align": {
-    "top": "置顶",
+    "left": "置左",
     "center": "置中",
-    "bottom": "置底"
+    "right": "置右"
   }
 }

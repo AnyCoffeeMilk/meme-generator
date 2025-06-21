@@ -8,7 +8,7 @@ export default function StepTitle({ step, children }: Props) {
     <div className="flex items-center text-sm sm:text-base gap-4">
       <label
         className="
-          flex-center rounded text-center
+          flex-center rounded text-center font-mono 
           min-w-[1.5em] min-h-[1.5em] 
           bg-fgSecondary text-bgPrimary font-extrabold"
       >

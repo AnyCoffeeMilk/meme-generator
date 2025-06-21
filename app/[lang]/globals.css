@@ -26,7 +26,7 @@
   --color-bgSecondary: var(--bg-secondary);
   --color-fgPrimary: var(--fg-primary);
   --color-fgSecondary: var(--fg-secondary);
-  --font-noto: 'Noto Sans SC';
+  --font-han: 'Source Han Sans';
   --font-mono: var(--font-geist-mono);
 }
 
@@ -43,7 +43,7 @@
 }
 
 html[lang^="zh"] body {
-  @apply font-noto;
+  @apply font-han;
 }
 
 html[lang^="en"] body {

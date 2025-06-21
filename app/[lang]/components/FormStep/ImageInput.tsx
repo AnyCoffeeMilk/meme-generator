@@ -28,7 +28,15 @@ export default function ImageInput({ previewUrl, onUploadImg }: Props) {
         onChange={handleChange}
       />
       {(previewUrl && <img className="absolute w-full h-full p-4 object-contain" src={previewUrl} alt="Preview" />) || (
-        <Image className="dark:invert absolute" src="/upload.svg" alt="Upload Image" width={50} height={50} priority />
+        <Image
+          className="dark:invert absolute"
+          src="/upload.svg"
+          alt="Upload Image"
+          draggable={false}
+          width={50}
+          height={50}
+          priority
+        />
       )}
     </div>
   );

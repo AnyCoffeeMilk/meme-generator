@@ -6,9 +6,9 @@ import { getDictionary } from "@/utils/getDictionary";
 import { DictionaryProvider } from "./context/DictionaryProvider";
 import "./globals.css";
 
-const notoSansSC = localFont({
-  src: "../../public/fonts/NotoSansSC.ttf",
-  variable: "--font-noto-sans-sc",
+const sourceHanSans = localFont({
+  src: "../../public/fonts/SourceHanSans.ttf",
+  variable: "--font-source-han-sans",
   display: "swap",
 });
 
@@ -24,16 +24,17 @@ export const metadata: Metadata = {
 
 interface Props {
   children: ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export default async function RootLayout({ children, params }: Props) {
-  const dict = await getDictionary(params.lang);
-  const isChinese = params.lang.startsWith("zh");
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const isChinese = lang.startsWith("zh");
 
   return (
-    <html lang={params.lang}>
-      <body className={`${geistMono.variable} ${isChinese && notoSansSC.variable} antialiased`}>
+    <html lang={lang}>
+      <body className={`${geistMono.variable} ${isChinese && sourceHanSans.variable} antialiased`}>
         <DictionaryProvider dict={dict}>{children}</DictionaryProvider>
       </body>
     </html>

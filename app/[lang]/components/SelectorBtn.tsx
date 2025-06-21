@@ -1,18 +1,20 @@
 import React from "react";
 
 interface Props {
+  style?: React.CSSProperties;
   text: string;
   onClick: () => void;
 }
 
-export default function SelectorBtn({ text, onClick }: Props) {
+export default function SelectorBtn({ style, text, onClick }: Props) {
   return (
     <button
       type="button"
       className="
         container-md clickable w-full inline-flex justify-between items-center group
-        px-4 py-2 shadow-sm text-sm
+        px-3 py-1 shadow-sm text-sm
         hover:bg-bgSecondary"
+      style={style}
       onClick={onClick}
     >
       {text}

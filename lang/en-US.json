@@ -21,11 +21,12 @@
   "labels": {
     "align": "Align",
     "font": "Font",
-    "text": "Text"
+    "color": "Color",
+    "outline": "Outline"
   },
   "align": {
-    "top": "Top",
+    "left": "Left",
     "center": "Center",
-    "bottom": "Bottom"
+    "right": "Right"
   }
 }

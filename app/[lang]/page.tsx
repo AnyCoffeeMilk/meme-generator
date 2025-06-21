@@ -21,6 +21,7 @@ export default function Home() {
   const [captions, setCaptions] = useState<Array<string>>([]);
   const [selected, setSelected] = useState<string>("");
   const [isPending, startTransition] = useTransition();
+  
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const dictionary = useDictionary();
@@ -77,8 +78,8 @@ export default function Home() {
   return (
     <main className="flex-1 w-full sm:px-8 lg:w-[768px] sm:max-h-screen grid grid-rows-[auto_1fr] py-8 gap-8">
       <div className="grid gap-4">
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-widest text-center">{dictionary.header.title}</h1>
-        <h2 className="text-sm sm:text-lg text-fgSecondary text-center">{dictionary.header.subtitle}</h2>
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-widest text-center">{dictionary.header.title}</h1>
+        <h2 className="text-sm sm:text-base text-fgSecondary text-center">{dictionary.header.subtitle}</h2>
       </div>
       <div className="grid grid-rows-[1fr_auto] gap-4 border p-4 border-bgSecondary rounded-lg shadow-lg">
         {stepComponent}

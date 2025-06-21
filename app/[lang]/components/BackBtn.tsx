@@ -14,7 +14,7 @@ export default function BackBtn({ onClick, disabled }: Props) {
       disabled={disabled}
       className="
         container-md clickable whitespace-nowrap leading-tight uppercase
-        py-4 px-8 text-fgPrimary font-bold
+        py-3 px-8 text-fgPrimary font-bold
         hover:bg-bgSecondary
         disabled:text-bgSecondary disabled:bg-bgPrimary"
     >
